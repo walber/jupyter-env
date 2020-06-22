@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  browser:
+    build: ./
+    # ...token='<your password>'
+    # command: start.sh jupyter lab --LabApp.token=''
+    command: >
+      bash -c "jt -t monokai -f roboto -fs 12 -ofs 11 -altp -nf robotosans -N -kl -cursw 5 -cursc r -cellw 85%
+      && start.sh jupyter notebook --NotebookApp.token=''"
+    ports:
+      - "8000:8888"
+    volumes:
+      - type: bind
+        source: ./notebooks
+        target: /home/jovyan/work
+    restart: always
+
