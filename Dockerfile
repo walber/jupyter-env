@@ -1,3 +1,4 @@
 FROM jupyter/datascience-notebook
-RUN pip install jupyterthemes
-RUN pip install --upgrade jupyterthemes
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+RUN rm requirements.txt 
