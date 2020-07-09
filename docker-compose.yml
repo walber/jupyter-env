@@ -4,9 +4,11 @@ services:
     build: ./
     # ...token='<your password>'
     # command: start.sh jupyter lab --LabApp.token=''
-    command: >
-      bash -c "jt -t monokai -f roboto -fs 12 -ofs 11 -altp -nf robotosans -N -kl -cursw 5 -cursc r -cellw 85%
-      && start.sh jupyter notebook --NotebookApp.token=''"
+    #
+    # bash -c "jt -t oceans16 -f roboto -fs 12 -ofs 11 -altp -nf robotosans -N -kl -cursw 3 -cursc r -cellw 85%
+    # && start.sh jupyter notebook --NotebookApp.token=''"
+    command: > 
+      bash -c "start.sh jupyter notebook --NotebookApp.token=''"
     ports:
       - "8000:8888"
     volumes:
